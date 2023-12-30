@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #ecf2f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  max-width: 72rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4rem 4rem -0.1rem rgba(201, 213, 225, 0.5);
+}
+
+.card-image {
+  max-width: 28.5rem;
+}
+
+.card-image img {
+  max-width: 28.5rem;
+  object-fit: cover;
+  object-position: left;
+  height: 100%;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.card-content {
+  padding: 3.2rem 4rem;
+}
+
+.card-content h1 {
+  font-size: 2rem;
+  line-height: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.025rem;
+  color: #48556a;
+  margin-bottom: 1.2rem;
+}
+
+.card-content .card-content-desc {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.012rem;
+  color: #6e8098;
+  margin-bottom: 2rem;
+}
+
+.card-content-avatar {
+  display: grid;
+  align-items: center;
+  grid-template-columns: max-content 1fr max-content;
+  gap: 1.6rem;
+  position: relative;
+}
+
+.card-content-avatar img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.card-content-avatar .card-content-avatar-name p {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.012rem;
+  color: #48556a;
+}
+
+.card-content-avatar .card-content-avatar-name span {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.012rem;
+  color: #9daec2;
+}
+
+.card-content-avatar .share-social {
+  width: 3.2rem;
+  height: 3.2rem;
+  background-color: #ecf2f8;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.card-content-avatar .share-social::after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.3rem;
+  background-image: url("./images/icon-share.svg");
+  transition: 0.3s ease;
+}
+
+.card-content-avatar .share-social:hover {
+  background-color: #6e8098;
+}
+
+.card-content-avatar .share-social:hover::after {
+  background-image: url("./images/icon-share-hover.svg");
+}
+
+.card-content-avatar .share-social.active {
+  background-color: #6e8098;
+}
+
+.card-content-avatar .share-social.active::after {
+  background-image: url("./images/icon-share-hover.svg");
+}
+
+.card-content-avatar .card-content-avatar-social {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  background-color: #48556a;
+  padding: 1.8rem 3.7rem;
+  border-radius: 1rem;
+  position: absolute;
+  right: -31.3%;
+  bottom: 6rem;
+  transform: translate3d(-50%, -50%, 0);
+  transform: scale(0.8);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.card-content-avatar .card-content-avatar-social::after {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 1.2rem;
+  background-image: url("./images/arrow.svg");
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  bottom: -1.7rem;
+  left: 50%;
+}
+
+.card-content-avatar .card-content-avatar-social li:first-child {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #9daec2;
+  margin-right: 0.5rem;
+}
+
+.card-content-avatar .card-content-avatar-social li img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.card-content-avatar .card-content-avatar-social.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+@media screen and (max-width: 740px) {
+  body {
+    margin: 8rem 2.4rem;
+    overflow-y: auto;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .card-image {
+    max-width: 100%;
+  }
+
+  .card-image img {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .card-content {
+    padding: 3.6rem 3.2rem 2rem 3.2rem;
+  }
+
+  .card-content h1 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
+  .card-content .card-content-desc {
+    margin-bottom: 3.2rem;
+  }
+
+  .card-content-avatar .share-social {
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: #ecf2f8;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    position: relative;
+    z-index: 5;
+  }
+
+  .card-content-avatar .card-content-avatar-social {
+    padding: 2.8rem 3.2rem;
+    border-radius: 0 0 1rem 1rem;
+    right: -3.2rem;
+    left: -3.2rem;
+    bottom: -2rem;
+  }
+
+  .card-content-avatar .card-content-avatar-social::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0 2.4rem;
+  }
+}
